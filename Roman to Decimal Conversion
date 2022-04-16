@@ -1,0 +1,63 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class RomanType
+{
+private:
+	string n;
+	int decimal;
+public:
+	RomanType()
+	{
+
+	}
+	void setN()
+	{
+		cout << "Enter string :" << endl;
+		getline(cin, n);
+	}
+	void Roman()
+	{
+		int s = 0;
+		for (int i = 0; i < n.length(); i++)
+		{
+			if (n[i] == 'M')
+				s = s + 1000;
+			if (n[i] == 'D')
+				s = s + 500;
+			if (n[i] == 'C')
+				s = s + 100;
+			if (n[i] == 'L')
+				s = s + 50;
+			if (n[i] == 'X')
+				s = s + 10;
+			if (n[i] == 'V')
+				s = s + 5;
+			if (n[i] == 'I')
+				s = s + 1;
+			decimal = s;
+		}
+	}
+	void getChoice()
+	{
+		int choice;
+		cout << "Enter choice :" << endl;
+		cin >> choice;
+		if (choice == 1)
+			cout << decimal << endl;
+		if (choice == 2)
+			cout << n;
+	}
+};
+int main()
+{
+
+	RomanType obj;
+	obj.setN();
+	obj.Roman();
+	obj.getChoice();
+
+
+	system("pause");
+	return 0;
+}
